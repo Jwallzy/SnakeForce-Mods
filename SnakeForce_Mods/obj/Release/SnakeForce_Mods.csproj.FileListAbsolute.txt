@@ -1,0 +1,8 @@
+C:\Users\Justin\source\repos\SnakeForce_Mods\SnakeForce_Mods\Package\plugins\SnakeForce_Mods\SnakeForce_Mods.dll
+C:\Users\Justin\source\repos\SnakeForce_Mods\SnakeForce_Mods\obj\Release\SnakeForce_Mods.csproj.AssemblyReference.cache
+C:\Users\Justin\source\repos\SnakeForce_Mods\SnakeForce_Mods\obj\Release\SnakeForce_Mods.csproj.CoreCompileInputs.cache
+C:\Users\Justin\source\repos\SnakeForce_Mods\SnakeForce_Mods\obj\Release\SnakeForce_Mods.dll
+C:\Users\Justin\Documents\GitHub\SnakeForce-Mods\SnakeForce_Mods\Package\plugins\SnakeForce_Mods\SnakeForce_Mods.dll
+C:\Users\Justin\Documents\GitHub\SnakeForce-Mods\SnakeForce_Mods\obj\Release\SnakeForce_Mods.csproj.AssemblyReference.cache
+C:\Users\Justin\Documents\GitHub\SnakeForce-Mods\SnakeForce_Mods\obj\Release\SnakeForce_Mods.csproj.CoreCompileInputs.cache
+C:\Users\Justin\Documents\GitHub\SnakeForce-Mods\SnakeForce_Mods\obj\Release\SnakeForce_Mods.dll
