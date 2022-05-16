@@ -15,7 +15,7 @@ namespace SnakeForce_Mods
 
         public const string
             MODNAME = "SnakeForceMods",
-            AUTHOR = "",
+            AUTHOR = "Mizar",
             GUID = AUTHOR + "_" + MODNAME,
             VERSION = "1.0.0.0";
 
@@ -35,8 +35,9 @@ namespace SnakeForce_Mods
         }
 
         #region[References]
-        public static PlayerControl P_Control = FindObjectOfType<PlayerControl>();
-        public static FollowerChanger[] F_Changer = FindObjectsOfType<FollowerChanger>();
+        public static PlayerControl P_Control;
+        public static FollowerChanger[] F_Changer;
+        public static GameObject player;
         #endregion
 
         public void Start() { harmony.PatchAll(assembly); InitConfig(); }
@@ -44,9 +45,11 @@ namespace SnakeForce_Mods
         #region[PlayerSearch]
         public static void PlayerSearch()
         {
-            P_Control.GetComponent<Combat>();
-            P_Control.GetComponent<Aimer>();
-            P_Control.GetComponent<Gun>();
+            P_Control = FindObjectOfType<PlayerControl>();
+            player = P_Control.gameObject;
+            player.GetComponent<Combat>();
+            player.GetComponent<Aimer>();
+            player.GetComponent<Gun>();
         }
 
         public static void FollowSearch()
@@ -63,7 +66,7 @@ namespace SnakeForce_Mods
         public void Update()
         {
             Modules.Character.GOD_MODE.Update();
-            //Modules.Character.SPEED.Update();
+            Modules.Character.SPEED.Update();
         }
 
         public void InitConfig()

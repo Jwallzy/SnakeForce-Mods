@@ -12,9 +12,12 @@ namespace SnakeForce_Mods.Modules.Character
         {
             if (Input.GetKeyUp(KeybindGmode.Value))
             {
-                Main.P_Control.GetComponent<Combat>().health = 99999;
-                Main.P_Control.GetComponent<Combat>().maxHealth = 99999;
-                Main.P_Control.GetComponent<Combat>().ignoreExplosion = true;
+                FollowerHP();
+                Main.PlayerSearch();
+                Main.FollowSearch();
+                Main.player.GetComponent<Combat>().health = 99999;
+                Main.player.GetComponent<Combat>().maxHealth = 99999;
+                Main.player.GetComponent<Combat>().ignoreExplosion = true;
                 Debug.Log("God Mode Applied!");
             }
         }
@@ -25,8 +28,9 @@ namespace SnakeForce_Mods.Modules.Character
 
             foreach (FollowerChanger changer in Followers)
             {
-                changer.GetComponent<Combat>().health = 999;
-                changer.GetComponent<Combat>().maxHealth = 999;
+                changer.GetComponent<Combat>().health = 99999;
+                changer.GetComponent<Combat>().maxHealth = 99999;
+                changer.GetComponent<Combat>().ignoreExplosion = true;
                 Debug.Log("God Mode Applied To Followers");
             }
         }
