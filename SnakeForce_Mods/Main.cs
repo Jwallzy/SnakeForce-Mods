@@ -38,6 +38,7 @@ namespace SnakeForce_Mods
         public static PlayerControl P_Control;
         public static FollowerChanger[] F_Changer;
         public static GameObject player;
+        public static ConfigEntry<KeyCode> KeyCodeDashMode;
         #endregion
 
         public void Start() { harmony.PatchAll(assembly); InitConfig(); }
@@ -67,13 +68,21 @@ namespace SnakeForce_Mods
         {
             Modules.Character.GOD_MODE.Update();
             Modules.Character.SPEED.Update();
+            Modules.Character.GUN_DMG.Update();
         }
 
         public void InitConfig()
         {
-            Modules.Character.GOD_MODE.KeybindGmode = Config.Bind("Cheats", "God Mode", KeyCode.Keypad0, "GODMODE!");
             Modules.Character.SPEED.keycodeSpeed = Config.Bind("Cheats", "Character speed", KeyCode.Keypad1, "SPEED!");
-            Modules.Character.SPEED.speedSpeed = Config.Bind("Cheats", "Speed slider", 8f, new ConfigDescription("Value of speed", new AcceptableValueRange<float>(0f, 999f)));
+            Modules.Character.GOD_MODE.KeybindGmode = Config.Bind("Cheats", "God mode", KeyCode.Keypad0, "GODMODE!");
+            Modules.Character.GUN_DMG.keycodeGun = Config.Bind("Cheats", "Gun damage", KeyCode.Keypad2, "Character Gun Dmg");
+            Modules.Character.GUN_DMG.P_Dmgval = Config.Bind("Cheats", "Damage slider", 5, new ConfigDescription("Value of damage", new AcceptableValueRange<int>(0, 999)));
+            Modules.Character.GUN_DMG.F_Dmgval = Config.Bind("Cheats", "F_Damage slider", 5, new ConfigDescription("Value of damage for follower's", new AcceptableValueRange<int>(0, 999)));
+            Modules.Character.GUN_DMG.P_BLval = Config.Bind("Cheats", "Bulletlife slider", 5, new ConfigDescription("Value of bulletlife", new AcceptableValueRange<int>(0, 999)));
+            Modules.Character.GUN_DMG.F_BLval = Config.Bind("Cheats", "F_Bulletlife slider", 5, new ConfigDescription("Value of bulletlife for follower's", new AcceptableValueRange<int>(0, 999)));
+            Modules.Character.GUN_DMG.P_BSval = Config.Bind("Cheats", "Bullet speed slider", 5, new ConfigDescription("Value of bullet speed", new AcceptableValueRange<int>(0, 999)));
+            Modules.Character.GUN_DMG.F_BSval = Config.Bind("Cheats", "F_Bullet speed slider", 5, new ConfigDescription("Value of bullet speed for follower's", new AcceptableValueRange<int>(0, 999)));
+            Modules.Character.SPEED.speedSpeed = Config.Bind("Cheats", "Speed slider", 8, new ConfigDescription("Value of speed", new AcceptableValueRange<int>(0, 999)));
         }
     }
 }

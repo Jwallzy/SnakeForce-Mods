@@ -10,11 +10,11 @@ namespace SnakeForce_Mods.Modules.Character
         public static ConfigEntry<KeyCode> KeybindGmode;
         public static void Update()
         {
-            if (Input.GetKeyUp(KeybindGmode.Value))
+            if (Input.GetKeyDown(KeybindGmode.Value))
             {
+                Main.FollowSearch();
                 FollowerHP();
                 Main.PlayerSearch();
-                Main.FollowSearch();
                 Main.player.GetComponent<Combat>().health = 99999;
                 Main.player.GetComponent<Combat>().maxHealth = 99999;
                 Main.player.GetComponent<Combat>().ignoreExplosion = true;
